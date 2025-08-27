@@ -1,1 +1,1 @@
-# RISE-UP-WANDERLUST-2025
+# Wanderlust
