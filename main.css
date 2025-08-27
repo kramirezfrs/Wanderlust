@@ -1,0 +1,508 @@
+    /*
+    ---------Inicio page-----------
+    */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: 'Poppins';
+    }
+
+    
+    a {
+      text-decoration: none !important;
+    }
+  
+
+
+    .carousel-item img {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .carousel-indicators [data-bs-target] {
+      background-color: #fff;
+    }
+
+ 
+
+#loginscreen{
+  background-image: url("img/2025.jpg");
+  background-size: cover; /* Ajusta la imagen al tamaño del elemento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    
+
+
+
+#ofrecemos{
+  padding-top: 60px;
+  height: 150px;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 100px;
+
+}
+
+#iniciasesion{
+  padding-top: 600px;
+  margin-top: 600px;
+  height: 300px;
+  text-align: center;
+  align-items: center;
+}
+
+    /*Inicio del estilo de apoyo de viaje*/
+      body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 50px;
+      color: #211c85;
+    }
+
+    .category-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 350px;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .category-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #eee;
+    }
+
+    .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .category-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #211c85;
+      margin-top: 10px;
+    }
+
+    .category-description {
+      font-size: 1rem;
+      color: #636e72;
+      margin-top: 10px;
+
+    }
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+footer{
+  background: #7973d1;
+}
+footer li{
+  color: white;
+  text-decoration: none;
+  text-align: left;
+}
+ footer h2{
+  font-size: 20px;
+  text-align: left;
+  color: #20187E;
+   }
+
+   footer button{
+    background-color: #20187E;
+   }
+   footer .titu{
+    background-color: #20187E;
+   }
+    /*Este es el final del estilo de la pagina de inicio*/
+
+
+    
+    /*
+    ---------ABOUT US-----------
+    */
+
+    /* Hero con degradado suave */
+    .about-hero {
+  background: linear-gradient(135deg, #20187E, #8D6DDB, #FFC6FF);
+  padding: 120px 20px 80px;
+  color: white;
+  text-align: center;
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.about-hero p {
+  font-size: 1.25rem;
+  max-width: 720px;
+  margin: auto;
+  color: #f8f8f8;
+  line-height: 1.6;
+}
+
+    /* Sección principal */
+    .info-section {
+      padding: 0 20px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Títulos secciones */
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 50px;
+      color: #3a3a5e;
+      text-shadow: 0 0 3px #b0a9ffaa;
+    }
+
+    /* Cards de valores con degradado y sombra */
+    .info-card {
+      background: linear-gradient(145deg, #A395F9, #8B7CE5);
+      color: #20187E;
+      padding: 30px 25px;
+      border-radius: 25px;
+      box-shadow: 0 12px 25px rgba(115, 101, 255, 0.3);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+
+    .info-card:hover {
+      background: linear-gradient(145deg, #8B7CE5, #A395F9);
+      transform: translateY(-10px);
+      box-shadow: 0 18px 30px rgba(115, 101, 255, 0.6);
+      cursor: pointer;
+    }
+
+    .info-card i {
+      font-size: 3rem;
+      margin-bottom: 18px;
+      color: #d4ceff;
+      background: rgba(255 255 255 / 0.25);
+      border-radius: 50%;
+      padding: 12px;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(255 255 255 / 0.3);
+      transition: background 0.3s ease;
+    }
+
+    .info-card:hover i {
+      background: rgba(255 255 255 / 0.45);
+    }
+
+    .info-card h4 {
+      font-weight: 700;
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .info-card p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: #e2dfffdd;
+      flex-grow: 1;
+      font-weight: 500;
+    }
+
+    /* Sección con imagen y texto (Misión y Visión) */
+    .info-with-image {
+      background: linear-gradient(135deg, #A495F7, #8D7EE6);
+      color: #20187E;
+      border-radius: 30px;
+      box-shadow: 0 12px 30px rgba(115, 101, 255, 0.25);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 30px;
+      gap: 25px;
+      margin-bottom: 50px;
+      transition: box-shadow 0.35s ease;
+    }
+
+    .info-with-image:hover {
+      box-shadow: 0 18px 40px rgba(115, 101, 255, 0.55);
+      cursor: pointer;
+    }
+
+    .info-image {
+      flex: 1 1 320px;
+      min-width: 280px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      max-height: 280px;
+    }
+
+    .info-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+
+    .info-with-image:hover .info-image img {
+      transform: scale(1.07);
+    }
+
+    .info-text {
+      flex: 1 1 320px;
+      min-width: 280px;
+    }
+
+    .info-text i {
+      font-size: 3.2rem;
+      margin-bottom: 16px;
+      color: #e6e0ffcc;
+      display: inline-block;
+      background: rgba(255 255 255 / 0.25);
+      border-radius: 50%;
+      padding: 14px;
+      box-shadow: 0 5px 15px rgba(255 255 255 / 0.3);
+      transition: background 0.3s ease;
+    }
+
+    .info-with-image:hover .info-text i {
+      background: rgba(255 255 255 / 0.45);
+    }
+
+    .info-text h4 {
+      font-weight: 800;
+      font-size: 2rem;
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
+      text-shadow: 0 0 5px #cfcaffcc;
+    }
+
+    .info-text p {
+      font-size: 1.3rem;
+      line-height: 1.65;
+      color: #e3deffcc;
+      font-weight: 600;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .about-hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .about-hero p {
+        font-size: 1.3rem;
+      }
+
+      .info-with-image {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .info-image, .info-text {
+        min-width: 100%;
+        max-height: none;
+      }
+
+      .info-image img {
+        height: auto;
+      }
+
+      .info-card h4 {
+        font-size: 1.5rem;
+      }
+
+      .info-card p {
+        font-size: 1.1rem;
+      }
+
+      .section-title {
+        font-size: 2.4rem;
+      }
+    }
+
+      /* MODALES CON FOTO GRANDE*/
+
+
+    .team-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .team-member {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      width: 250px;
+      cursor: pointer;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .role {
+      color: #555;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* MODAL STYLES */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      align-items: center;
+      background-color: white;
+      margin: 5% auto;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      position: relative;
+      text-align: center;
+    }
+
+    .modal-content img {
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #555;
+    }
+
+    .close:hover {
+      color: black;
+    }
+      
+
+    /* FIN DE ABOUT US*/
+    @keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #8D6DDB, 0 0 20px #8D6DDB; }
+  to { text-shadow: 0 0 20px #FFC6FF, 0 0 30px #8D6DDB; }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #20187E, #8D6DDB, #FFC6FF);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  color: white;
+}
+
+.btn-gradient {
+  border-radius: 20px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #20187E, #8D6DDB, #FFC6FF);
+  color: white;
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  border: none;
+}
+

@@ -1,0 +1,460 @@
+<!--Hacer en el menu el login-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Explore El Salvador</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" href="img/Wonderlust-removebg-preview.png">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+<!-- MENU SUPERIOR -->
+<header class="bg-white shadow-lg  shadow-lg transition-all duration-300 hover:shadow-xl">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="Inicio.html" class="flex items-center space-x-1">
+      <img src="img/Wonderlust-removebg-preview.png" alt="Wanderlust Icono" class="h-20 w-20">
+    </a>
+
+    <!-- Navegación en desktop -->
+    <nav class="hidden md:flex space-x-8 items-center">
+      <a href="aboutuss.html" class="text-gray-700 font-bold hover:text-indigo-600 transition">About Us</a>
+      <a href="#paquetes" class="text-gray-700 font-bold hover:text-indigo-600 transition">Packages</a>
+      <a href="#apoyoviajes" class="text-gray-700 font-bold hover:text-indigo-600 transition">Travel support</a>
+      <a href="actividades.html" class="text-gray-700 font-bold hover:text-indigo-600 transition">Activities</a> 
+      <a href="loginregistration.html" class="bg-indigo-900 ml-4 px-4 py-2 text-white rounded-full hover:brightness-200 transition">Iniciar sesión</a>
+    </nav>
+
+    <!-- Botón móvil -->
+    <button class="md:hidden text-gray-700 text-2xl focus:outline-none" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <!-- Menú para móviles -->
+  <div id="mobileMenu" class="md:hidden px-6 pb-4 hidden bg-white shadow-inner">
+    <a href="#destacados" class="block py-2 text-gray-700 hover:text-blue-600">Featured</a>
+    <a href="#paquetes" class="block py-2 text-gray-700 hover:text-blue-600">Packages</a>
+    <a href="#apoyoviajes" class="block py-2 text-gray-700 hover:text-blue-600">Travel support</a>
+    <a href="#actividades" class="block py-2 text-gray-700 hover:text-blue-600">Activities</a>
+    <a href="login.html" class="block mt-2 text-center px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">Log in</a>
+  </div>
+</header>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+</script>
+
+
+<!--LOG IN-->
+<div id="loginscreen">
+    <div class="flex relative z-20 items-center overflow-hidden ">
+        <div class="container mx-auto px-6 flex relative py-20 ">
+            <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20 ">
+                <span class="w-20 h-2 bg-gray-800 dark:bg-white mb-12">
+                </span>
+                <h1 class="font-poppins uppercase sm:text-6xl font-black flex flex-col leading-none dark:text-white text-gray-800">
+                    Log in /                    
+                    <span class="text-5xl sm:text-6xl">
+                      Register
+                    </span>
+                </h1>
+                <br>
+                <p class="text-sm sm:text-base text-gray-700 dark:text-white">
+                  El Salvador awaits you! Register now and discover paradisiacal beaches, majestic volcanoes, and the warmth of our people. Your perfect adventure begins with just a click.
+                </p>
+                <div class="flex mt-8">
+                    <a href="loginregistration.html" class="uppercase py-2 px-4 rounded-lg bg-white border-2 border-transparent text-black hover:text-white text-md text-1.5xl font-medium mr-4 hover:bg-indigo-600">
+                      Start your adventure!
+                    </a>
+                </div>
+            </div>
+            <!--
+            <div class="hidden sm:block sm:w-1/3 lg:w-3/5 relative flex justify-end">
+                <img src="img/5.jpeg" class="max-w-lg lg:max-w-xl xl:max-w-3xl"/>
+            </div>
+            -->
+        </div>
+    </div>
+</div>
+
+
+
+<!-- DESTACADOS -->
+<section id="destacados" class="bg-gradient-to-b from-white to-indigo-50 py-20">
+  <div class="container mx-auto px-4">
+    <!-- Encabezado -->
+    <div class="text-center mb-16">
+      <span class="text-indigo-600 font-bold tracking-widest uppercase">Unique experiences</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2 mb-4">The most popular in El Salvador</h2>
+      <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+      <p class="max-w-2xl mx-auto text-lg text-gray-600">Discover the essence of a vibrant country: dreamy beaches, colonial towns steeped in history, majestic volcanoes, and a culture that will captivate you with its warmth and traditions.</p>
+    </div>
+
+    <!-- Grid de destacados -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Item 1 - Hyatt -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <img alt="Hyatt Centric" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2022/05/04/0954/SALCT-P0017-Hotel-Exterior.jpg/SALCT-P0017-Hotel-Exterior.4x3.jpg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 text-white">
+          <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-bold">HOTEL</span>
+          <h3 class="text-2xl font-bold mt-2">Hyatt Centric San Salvador</h3>
+          <p class="text-sm opacity-90">Antiguo Cuscatlán • 4.5★</p>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity duration-300">
+          <a href="alojamiento.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-all flex items-center">
+            See more <span class="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 2 - Xolo Maíz -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <img alt="Xolo Maíz" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://resizer.otstatic.com/v2/photos/large/2/67942444.jpg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 text-white">
+          <span class="bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-bold">RESTAURANT</span>
+          <h3 class="text-2xl font-bold mt-2">El Xolo Maíz</h3>
+          <p class="text-sm opacity-90">Museo Nacional de Antropología</p>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity duration-300">
+          <a href="restaurantes.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-all flex items-center">
+            See more <span class="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 3 - Barceló -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <img alt="Barceló" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://static.barcelo.com/content/dam/bhg/master/es/hoteles/el-salvador/san-salvador/barcelo-san-salvador/main-photos/hotel/BSSAN_EXT_04.jpg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 text-white">
+          <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-bold">HOTEL</span>
+          <h3 class="text-2xl font-bold mt-2">Barceló San Salvador</h3>
+          <p class="text-sm opacity-90">Zona Rosa • 5★</p>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity duration-300">
+          <a href="alojamiento.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-all flex items-center">
+            See more <span class="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 4 - Las Magnolias -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <img alt="Las Magnolias" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.trvl-media.com/lodging/1000000/80000/78300/78213/a3308ac1.jpg?impolicy=resizecrop&ra=fill&rh=575&rw=575">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 text-white">
+          <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-bold">HOTEL</span>
+          <h3 class="text-2xl font-bold mt-2">Las Magnolias Hotel Boutique</h3>
+          <p class="text-sm opacity-90">San Benito • 3★</p>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity duration-300">
+          <a href="alojamiento.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-all flex items-center">
+            See more <span class="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 5 - Celeste Imperio -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <img alt="Celeste Imperio" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/5d/b6/e4/photo0jpg.jpg?h=500&s=1&w=900">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 text-white">
+          <span class="bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-bold">RESTAURANT</span>
+          <h3 class="text-2xl font-bold mt-2">Celeste Imperio</h3>
+          <p class="text-sm opacity-90">Santa Tecla, La Libertad</p>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity duration-300">
+          <a href="restaurantes.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-all flex items-center">
+            See more <span class="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 6 - Restaurante R&R -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <img alt="Restaurante R&R" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/d0/ea/2a/entrada-al-restaurante.jpg?h=500&s=1&w=900">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 text-white">
+          <span class="bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-bold">RESTAURANT</span>
+          <h3 class="text-2xl font-bold mt-2">Restaurante R&R</h3>
+          <p class="text-sm opacity-90">Juayúa, Sonsonate</p>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity duration-300">
+          <a href="restaurantes.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-medium transition-all flex items-center">
+            See more <span class="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- APOYO DE VIAJES MEJORADO -->
+<section id="apoyoviajes" class="py-20 bg-indigo-900 text-white">
+  <div class="container mx-auto px-4">
+    <!-- Encabezado impactante -->
+    <div class="text-center mb-16">
+      <span class="text-indigo-300 font-bold tracking-widest uppercase">Essential services</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold mt-2 mb-4">Travel support</h2>
+      <div class="w-20 h-1 bg-indigo-300 mx-auto mb-6"></div>
+      <p class="max-w-2xl mx-auto text-lg text-indigo-100">Everything you need for a perfect trip, all in one place</p>
+    </div>
+
+    <!-- Grid de servicios -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Alojamiento -->
+      <div class="group relative overflow-hidden rounded-xl bg-white text-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <div class="h-48 overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="img/hotel-exterior.jpg" alt="Alojamiento">
+        </div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Accommodation</h3>
+          <p class="text-gray-600 mb-4">Find safe and comfortable places to rest during your trip.</p>
+          <a href="alojamiento.html" class="inline-flex items-center text-indigo-600 font-medium group-hover:text-indigo-800 transition-colors">
+            Explore options <span class="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Restaurantes -->
+      <div class="group relative overflow-hidden rounded-xl bg-white text-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <div class="h-48 overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="img/istockphoto-1235012545-612x612.jpg" alt="Restaurantes">
+        </div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Restaurant</h3>
+          <p class="text-gray-600 mb-4">Enjoy delicious local dishes that will fill you with energy.</p>
+          <a href="restaurantes.html" class="inline-flex items-center text-indigo-600 font-medium group-hover:text-indigo-800 transition-colors">
+            Explore options <span class="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Transporte -->
+      <div class="group relative overflow-hidden rounded-xl bg-white text-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <div class="h-48 overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="img/County-6-1024x576.webp" alt="Transporte">
+        </div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Transport</h3>
+          <p class="text-gray-600 mb-4">Accessible mobility options to reach all your destinations.</p>
+          <a href="transporte.html" class="inline-flex items-center text-indigo-600 font-medium group-hover:text-indigo-800 transition-colors">
+            Explore options <span class="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Guías -->
+      <div class="group relative overflow-hidden rounded-xl bg-white text-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <div class="h-48 overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="img/ServicesGuiasTuristicos01.jpg" alt="Guías turísticas">
+        </div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Tourist Guides</h3>
+          <p class="text-gray-600 mb-4">Meet people who will accompany you and show you the best of the place.</p>
+          <a href="guias.html" class="inline-flex items-center text-indigo-600 font-medium group-hover:text-indigo-800 transition-colors">
+            Explore options <span class="ml-2">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- PAQUETES -->
+<section id="paquetes" class="bg-gradient-to-b from-indigo-50 to-white py-20">
+  <div class="container mx-auto px-4">
+    <!-- Encabezado mejorado -->
+    <div class="text-center mb-16">
+      <span class="text-indigo-600 font-bold tracking-widest uppercase">Exclusive offers</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2 mb-4">Try our special packages!</h2>
+      <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+    </div>
+
+    <!-- Paquete principal -->
+    <div class="relative rounded-2xl overflow-hidden shadow-2xl mb-10 group">
+      <img alt="7 Days Pack" class="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-500" src="https://www.adventurouskate.com/wp-content/uploads/2015/04/DSC_0037.jpg">
+      <div class="relative z-10 bg-gradient-to-r from-black/70 to-black/30 h-full min-h-[400px] flex items-center">
+        <div class="max-w-2xl px-8 py-12 text-white">
+          <div class="inline-block bg-indigo-600 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">MÁS POPULAR</div>
+          <h3 class="text-4xl md:text-5xl font-bold mb-4">7 DAYS PACK</h3>
+          <p class="text-xl mb-6">Stay 7 days or more and enjoy significant savings. Perfect for business travelers and extended vacations with premium amenities.</p>
+          <div class="flex flex-wrap items-center gap-4">
+            <span class="text-2xl font-bold">$599<span class="text-lg">/person</span></span>
+            <a href="paquetes.html" class="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-medium transition-all duration-300 hover:shadow-lg">
+              See more <span class="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paquetes secundarios -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Weekend Plan -->
+      <div class="relative rounded-xl overflow-hidden shadow-lg group">
+        <img alt="Weekend Plan" class="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-500" src="https://www.civitatis.com/f/el-salvador/san-salvador/galeria/big/playa-salvador.jpg">
+        <div class="relative z-10 bg-gradient-to-r from-black/70 to-black/30 h-full min-h-[300px] flex items-center">
+          <div class="max-w-md px-6 py-8 text-white">
+            <h3 class="text-3xl font-bold mb-3">WEEKEND PLAN</h3>
+            <p class="mb-5">Escape the ordinary with our exclusive weekend package. Includes complimentary breakfast and late checkout until 2 PM.</p>
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="text-xl font-bold">$299<span class="text-sm">/person</span></span>
+              <a href="paquetes.html" class="inline-flex items-center px-5 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full text-sm font-medium transition-all duration-300">
+                See more <span class="ml-1">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15 Days Plan -->
+      <div class="relative rounded-xl overflow-hidden shadow-lg group">
+        <img alt="15 Days Plan" class="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-500" src="https://i.pinimg.com/736x/4e/f7/3d/4ef73d741fa2546e89f84a56a1651d42.jpg">
+        <div class="relative z-10 bg-gradient-to-r from-black/70 to-black/30 h-full min-h-[300px] flex items-center">
+          <div class="max-w-md px-6 py-8 text-white">
+            <h3 class="text-3xl font-bold mb-3">15 DAYS PLAN</h3>
+            <p class="mb-5">Plan ahead and save more! Book your stay 15 days in advance and enjoy exclusive rates with free cancellation up to 7 days.</p>
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="text-xl font-bold">$899<span class="text-sm">/person</span></span>
+              <a href="paquetes.html" class="inline-flex items-center px-5 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full text-sm font-medium transition-all duration-300">
+                See more <span class="ml-1">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<br>
+<br><br><br><br>
+
+
+
+
+
+
+
+<!-- FOOTER -->
+<footer class="bg-indigo-900 text-white">
+  <div class="container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Menú -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">MENU</h3>
+        <ul class="space-y-2">
+          <li><a href="Inicio.html" class="hover:text-indigo-300 transition">Home</a></li>
+          <li><a href="#apoyoviajes" class="hover:text-indigo-300 transition">Travel support</a></li>
+          <li><a href="#paquetes" class="hover:text-indigo-300 transition">Packages</a></li>
+        </ul>
+      </div>
+      
+      <!-- Páginas -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">PAGES</h3>
+        <ul class="space-y-2">
+          <li><a href="loginregistration.html" class="hover:text-indigo-300 transition">Log In</a></li>
+          <li><a href="aboutus.html" class="hover:text-indigo-300 transition">About Us</a></li>
+          <li><a href="actividades.html" class="hover:text-indigo-300 transition">Activities</a></li>
+          <li><a href="formulario.html" class="hover:text-indigo-300 transition">Booking</a></li>
+        </ul>
+      </div>
+      
+      <!-- Categorías -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">CATEGORIES</h3>
+        <ul class="space-y-2">
+          <li><a href="alojamiento.html" class="hover:text-indigo-300 transition">Accommodation</a></li>
+          <li><a href="restaurantes.html" class="hover:text-indigo-300 transition">Restaurants</a></li>
+          <li><a href="guias.html" class="hover:text-indigo-300 transition">Guides</a></li>
+          <li><a href="transporte.html" class="hover:text-indigo-300 transition">Transport</a></li>
+        </ul>
+      </div>
+      
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">NEWSLETTER</h3>
+        <p class="mb-4 text-indigo-200">Subscribe to receive offers</p>
+        <div class="flex">
+          <input type="email" placeholder="Tu email" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-800">
+          <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r transition">Send</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Pie inferior -->
+    <div class="border-t border-indigo-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center mb-4 md:mb-0">
+        <img src="img/Wonderlust-removebg-preview.png" alt="Logo" class="h-12 w-12 mr-3">
+        <span class="text-xl font-bold">Wanderlust</span>
+      </div>
+      
+      <div class="text-indigo-300 text-sm mb-4 md:mb-0">
+        © 2025 Wanderlust - All rights reserved
+      </div>
+      
+      <div class="flex space-x-4">
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<!-- End of .container -->
+</body>
+</html>

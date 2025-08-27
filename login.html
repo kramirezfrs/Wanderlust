@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wonderlust Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="icon" href="img/Wonderlust-removebg-preview.png">
+  <style>
+    :root {
+      --deep-purple: #1A1175;
+      --royal-blue: #4646D6;
+      --medium-purple: #7366D9;
+      --light-purple: #8D78D6;
+      --lavender: #ffffff;
+    }
+
+    /* Fondo general con imagen */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      background: url('img/385568089_6868ecc5be_b.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    /* Capa oscura para mejorar contraste */
+    
+
+    .form-container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255 255 255 / 0.15);
+      backdrop-filter: blur(18px);
+      border-radius: 20px;
+      max-width: 420px;
+      width: 100%;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 8px 32px rgb(26 17 117 / 0.35);
+    }
+
+    .logo {
+      display: block;
+      max-width: 140px;
+      margin: 0 auto 1.5rem;
+      filter: drop-shadow(0 0 5px var(--lavender));
+    }
+
+    .form-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--lavender);
+      margin-bottom: 2rem;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--lavender);
+    }
+
+    input.form-control,
+    select.form-select,
+    textarea.form-control {
+      background-color: rgba(255 255 255 / 0.9);
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.6rem 0.75rem;
+      margin-bottom: 1rem;
+      color: #111;
+      transition: box-shadow 0.3s ease;
+    }
+
+    input.form-control:focus,
+    select.form-select:focus,
+    textarea.form-control:focus {
+      outline: none;
+      box-shadow: 0 0 8px var(--medium-purple);
+      background-color: white;
+      color: #111;
+    }
+
+    .form-check-label {
+      color: var(--lavender);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .form-check-input {
+      filter: drop-shadow(0 0 1px var(--lavender));
+    }
+
+    .form-check-inline {
+      margin-right: 1rem;
+    }
+
+    .btn-custom {
+      background-color: var(--royal-blue);
+      color: white;
+      font-weight: 700;
+      font-size: 1.15rem;
+      border-radius: 50px;
+      padding: 0.65rem 0;
+      width: 100%;
+      border: none;
+      box-shadow: 0 4px 12px rgba(70, 70, 214, 0.6);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-custom:hover,
+    .btn-custom:focus {
+      background-color: var(--medium-purple);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+      outline: none;
+    }
+
+    /* Radio buttons y checkbox: mejor espaciado */
+    .form-check {
+      margin-bottom: 1rem;
+    }
+
+    /* Responsivo */
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 2rem 1.5rem;
+        max-width: 100%;
+      }
+
+      .form-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container" role="form">
+    <img src="Logo_Wonderlust.png" alt="Logo Wonderlust" class="logo" />
+    <h2 class="form-title">Login</h2>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" class="form-control" placeholder="Ej. Lucia Torres" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control" placeholder="correo@ejemplo.com" required />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" class="form-control" placeholder="+503 0000-0000" required />
+
+      <label class="d-block">Gender</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="male" value="Masculino" required />
+        <label class="form-check-label" for="male">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="female" value="Femenino" />
+        <label class="form-check-label" for="female">Female</label>
+      </div>
+
+      <label for="age">Age</label>
+      <select id="age" class="form-select" required>
+        <option value="" disabled selected>Select your age</option>
+        <option>18-25</option>
+        <option>26-35</option>
+        <option>36-45</option>
+        <option>46-60</option>
+      </select>
+
+      <label for="message">Mesagge</label>
+      <textarea id="message" class="form-control" rows="3" placeholder="¿En qué podemos ayudarte?" required></textarea>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="terms" required />
+        <label class="form-check-label" for="terms">I accept the terms and conditions</label>
+      </div>
+
+      <button type="submit" class="btn btn-custom">Send</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities | Wanderlust</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+      <link rel="icon" href="img/Wonderlust-removebg-preview.png">
+
+    <style>
+        @keyframes reveal {
+            from { clip-path: inset(0 100% 0 0); }
+            to { clip-path: inset(0 0 0 0); }
+        }
+
+        @keyframes textReveal {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes shine {
+            from { transform: translateX(-100%) rotate(45deg); }
+            to { transform: translateX(200%) rotate(45deg); }
+        }
+
+        .shine-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transform: translateX(-100%) rotate(45deg);
+        }
+
+        .shine-effect:hover::before {
+            animation: shine 1.5s;
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .split-reveal {
+            animation: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .text-reveal {
+            animation: textReveal 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .scroll-container {
+            scroll-snap-type: y mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .scroll-section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .content-mask {
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), 
+                        url('https://www.presidencia.gob.sv/wp-content/uploads/2021/05/photo_2021-05-19_12-25-05.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: #4f46e5;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .section-title:hover::after {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body class="font-sans">
+<!-- TOP MENU -->
+<header class="bg-white shadow-lg sticky top-0 z-50">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="Inicio.html" class="flex items-center space-x-1">
+      <img src="img/Wonderlust-removebg-preview.png" alt="Wanderlust Icon" class="h-20 w-20">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-8 items-center">
+      <a href="aboutuss.html" class="text-gray-700 font-medium hover:text-indigo-600 transition">About Us</a>
+      <a href="paquetes.html" class="text-gray-700 font-medium hover:text-indigo-600 transition">Packages</a>
+      <a href="#apoyoviajes" class="text-gray-700 font-medium hover:text-indigo-600 transition">Travel Support</a>
+      <a href="actividades.html" class="text-indigo-600 font-medium transition">Activities</a> 
+      <a href="perfil.html" class="bg-indigo-900 ml-4 px-2 py-2 rounded-full hover:brightness-200 transition">
+<svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z" clip-rule="evenodd"/>
+</svg>
+</a>    </nav>
+
+    <!-- Mobile Button -->
+    <button class="md:hidden text-gray-700 text-2xl focus:outline-none" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden px-6 pb-4 hidden bg-white shadow-inner">
+    <a href="#destacados" class="block py-2 text-gray-700 hover:text-blue-600">Featured</a>
+    <a href="paquetes.html" class="block py-2 text-gray-700 hover:text-blue-600">Packages</a>
+    <a href="#apoyoviajes" class="block py-2 text-gray-700 hover:text-blue-600">Travel Support</a>
+    <a href="#actividades" class="block py-2 text-gray-700 hover:text-blue-600">Activities</a>
+      <a href="perfil.html" class="bg-indigo-900 ml-4 px-2 py-2 rounded-full hover:brightness-200 transition">
+<svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z" clip-rule="evenodd"/>
+</svg>
+</a>  </div>
+</header>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+</script>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container mx-auto px-6">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Discover El Salvador</h1>
+        <p class="text-xl md:text-2xl text-white mb-8">Unique experiences that will take your breath away</p>
+        <a href="#actividades" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">
+            Explore our activities
+        </a>
+    </div>
+</section>
+
+<!-- Activity Categories Section -->
+<div class="bg-indigo-50 py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Activity Categories</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Nature -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://elsalvador.travel/system/wp-content/uploads/2024/07/san.vicente-torre.jpg" alt="Nature" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-2xl font-bold text-white">Nature</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Explore the most impressive landscapes of El Salvador, from volcanoes to tropical forests.</p>
+                    <a href="#naturaleza" class="text-indigo-600 font-medium hover:text-indigo-800 transition">View activities →</a>
+                </div>
+            </div>
+            
+            <!-- Culture -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://elsalvadorviajar.com/wp-content/uploads/2022/05/Bailes-y-trajes-tipicos-de-El-Salvador.jpg" alt="Culture" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-2xl font-bold text-white">Culture</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Immerse yourself in the rich cultural heritage of El Salvador through its towns, traditions and art.</p>
+                    <a href="#cultura" class="text-indigo-600 font-medium hover:text-indigo-800 transition">View activities →</a>
+                </div>
+            </div>
+            
+            <!-- Beaches -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1WzBIP_JlKcfmT4ds0hMR-oBIq1O3F_Httg&s" alt="Beaches" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-2xl font-bold text-white">Beaches</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Enjoy the spectacular Pacific beaches and all the activities they offer.</p>
+                    <a href="#playas" class="text-indigo-600 font-medium hover:text-indigo-800 transition">View activities →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Activities Section -->
+<section id="actividades" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Featured Activities</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Activity 1 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/fa/66/d3.jpg" alt="Santa Ana Volcano" class="w-full h-full object-cover">
+                    <div class="absolute top-0 right-0 bg-indigo-600 text-white px-3 py-1 m-2 rounded-full text-sm font-medium">Nature</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Hike to Santa Ana Volcano</h3>
+                    <p class="text-gray-600 mb-4">Climb to the crater of the country's highest volcano and enjoy incredible views of Lake Coatepeque.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$25 per person</span>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 transition">More info →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity 2 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/ES_Joya_Ceren_05_2012_Estructura_9_Area_2_Tamazcal_wide_angle_1479.JPG" alt="Joya de Cerén" class="w-full h-full object-cover">
+                    <div class="absolute top-0 right-0 bg-yellow-600 text-white px-3 py-1 m-2 rounded-full text-sm font-medium">Culture</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Joya de Cerén</h3>
+                    <p class="text-gray-600 mb-4">Archaeological site declared a UNESCO World Heritage Site, a Mesoamerican Pompeii.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$15 per person</span>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 transition">More info →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity 3 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://www.turismoitalianews.it/images/stories/el_Salvador/ElTunco_CitySurf_ElSalvador_01.jpg" alt="Surf in El Tunco" class="w-full h-full object-cover">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white px-3 py-1 m-2 rounded-full text-sm font-medium">Beaches</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Surf in El Tunco</h3>
+                    <p class="text-gray-600 mb-4">One of the country's most famous surf spots with nightlife and local gastronomy.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$40 per person</span>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 transition">More info →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                View all activities
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Nature Section -->
+<section id="naturaleza" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 section-title">Nature and Adventure</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/fa/66/d3.jpg" alt="" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <p class="text-xs text-indigo-600 uppercase font-bold">Nature and Adventure</p>
+                    <h3 class="text-lg font-semibold mt-2">Hike to Santa Ana Volcano</h3>
+                    <p class="text-sm text-gray-600 mt-2">Climb to the crater of the country's highest volcano and enjoy incredible views of Lake Coatepeque.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$25 per person</span>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:text-indigo-800 transition">View details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/bf/3f/a4.jpg" alt="" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <p class="text-xs text-indigo-600 uppercase font-bold">Nature and Adventure</p>
+                    <h3 class="text-lg font-semibold mt-2">El Imposible National Park</h3>
+                    <p class="text-sm text-gray-600 mt-2">Hiking, bird watching and unique biodiversity in this tropical dry forest.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$20 per person</span>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:text-indigo-800 transition">View details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <img src="https://online.salvadoreantours.com/wp-content/uploads/2016/05/DSC_9727-e1463604019684.jpg" alt="" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <p class="text-xs text-indigo-600 uppercase font-bold">Nature and Adventure</p>
+                    <h3 class="text-lg font-semibold mt-2">Canopy in Apaneca</h3>
+                    <p class="text-sm text-gray-600 mt-2">Fly through the skies on zip lines surrounded by coffee plantations and cloud forests.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$35 per person</span>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:text-indigo-800 transition">View details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Culture Section -->
+<section id="cultura" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 section-title">Salvadoran Culture</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/ES_Joya_Ceren_05_2012_Estructura_9_Area_2_Tamazcal_wide_angle_1479.JPG" alt="" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <p class="text-xs text-yellow-600 uppercase font-bold">Salvadoran Culture</p>
+                    <h3 class="text-lg font-semibold mt-2">Joya de Cerén</h3>
+                    <p class="text-sm text-gray-600 mt-2">Archaeological site declared a UNESCO World Heritage Site, a Mesoamerican Pompeii.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$15 per person</span>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:text-indigo-800 transition">View details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <img src="https://everythingelsalvador.com/wp-content/uploads/2023/02/Ruta-de-las-Flores-El-Salvador.webp" alt="" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <p class="text-xs text-yellow-600 uppercase font-bold">Salvadoran Culture</p>
+                    <h3 class="text-lg font-semibold mt-2">Flower Route</h3>
+                    <p class="text-sm text-gray-600 mt-2">Tour colonial towns with food fairs, murals and living culture.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$30 per person</span>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:text-indigo-800 transition">View details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <img src="https://laopinion.com/wp-content/uploads/sites/3/2024/11/FotoRogerLaOpi.jpg?w=1200" alt="" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <p class="text-xs text-yellow-600 uppercase font-bold">Salvadoran Culture</p>
+                    <h3 class="text-lg font-semibold mt-2">Word and Image Museum</h3>
+                    <p class="text-sm text-gray-600 mt-2">Exhibits history, art and memory of the Salvadoran armed conflict.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$10 per person</span>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:text-indigo-800 transition">View details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Beaches Section -->
+<section id="playas" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 section-title">Beaches and Coast</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <img src="https://www.turismoitalianews.it/images/stories/el_Salvador/ElTunco_CitySurf_ElSalvador_01.jpg" alt="" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <p class="text-xs text-blue-600 uppercase font-bold">Beaches and Coast</p>
+                    <h3 class="text-lg font-semibold mt-2">Surf in El Tunco</h3>
+                    <p class="text-sm text-gray-600 mt-2">One of the country's most famous surf spots with nightlife and local gastronomy.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$40 per person</span>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:text-indigo-800 transition">View details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWnhYoIoqtrNz9daIqWioHPMy9am0bPYTIAA&s" alt="" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <p class="text-xs text-blue-600 uppercase font-bold">Beaches and Coast</p>
+                    <h3 class="text-lg font-semibold mt-2">El Cuco Beach</h3>
+                    <p class="text-sm text-gray-600 mt-2">Soft sand and relaxed atmosphere ideal for resting in eastern El Salvador.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$30 per person</span>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:text-indigo-800 transition">View details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTza_gTba20ubanUpuZCI_bZJaEijeZs4-GMg&s" alt="" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <p class="text-xs text-blue-600 uppercase font-bold">Beaches and Coast</p>
+                    <h3 class="text-lg font-semibold mt-2">Sunset at Mizata Beach</h3>
+                    <p class="text-sm text-gray-600 mt-2">A quiet corner perfect for watching the sunset and completely disconnecting.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-indigo-600 font-bold">$25 per person</span>
+                        <a href="#" class="text-indigo-600 text-sm font-medium hover:text-indigo-800 transition">View details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Details and Payment Modal -->
+<div id="activityModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+                <h3 id="modalTitle" class="text-2xl font-bold text-gray-800"></h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <img id="modalImage" src="" alt="" class="w-full h-48 md:h-64 object-cover rounded-lg">
+                    <div class="mt-4">
+                        <p id="modalCategory" class="text-sm font-medium text-indigo-600"></p>
+                        <p id="modalPrice" class="text-xl font-bold mt-1"></p>
+                        <p id="modalDescription" class="text-gray-600 mt-2"></p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-4">Complete reservation</h4>
+                    
+                    <form id="paymentForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-gray-700">Activity date</label>
+                            <input type="date" id="date" name="date" required class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        
+                        <div>
+                            <label for="people" class="block text-sm font-medium text-gray-700">Number of people</label>
+                            <input type="number" id="people" name="people" min="1" value="1" required class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        
+                        <div class="pt-4 border-t border-gray-200">
+                            <h5 class="text-sm font-medium text-gray-700 mb-2">Payment method</h5>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input id="credit-card" name="payment" type="radio" checked class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                                    <label for="credit-card" class="ml-3 block text-sm font-medium text-gray-700">Credit/debit card</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="paypal" name="payment" type="radio" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                                    <label for="paypal" class="ml-3 block text-sm font-medium text-gray-700">PayPal</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="creditCardFields">
+                            <div class="mt-4">
+                                <label for="cardNumber" class="block text-sm font-medium text-gray-700">Card number</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 mt-4">
+                                <div>
+                                    <label for="expiry" class="block text-sm font-medium text-gray-700">Exp. date</label>
+                                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                                </div>
+                                <div>
+                                    <label for="cvc" class="block text-sm font-medium text-gray-700">CVC</label>
+                                    <input type="text" id="cvc" name="cvc" placeholder="123" class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="paypalFields" class="hidden">
+                            <div class="mt-4 p-4 bg-yellow-50 rounded-md">
+                                <p class="text-sm text-gray-600">You will be redirected to PayPal to complete your payment after confirming the reservation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-md transition duration-300">
+                                Confirm and Pay
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br>
+
+<!-- FOOTER -->
+<footer class="bg-indigo-900 text-white">
+  <div class="container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Menú -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">MENU</h3>
+        <ul class="space-y-2">
+          <li><a href="Inicio.html" class="hover:text-indigo-300 transition">Home</a></li>
+          <li><a href="#apoyoviajes" class="hover:text-indigo-300 transition">Travel Support</a></li>
+          <li><a href="#paquetes" class="hover:text-indigo-300 transition">Packages</a></li>
+        </ul>
+      </div>
+      
+      <!-- Páginas -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">PAGES</h3>
+        <ul class="space-y-2">
+          <li><a href="loginregistration.html" class="hover:text-indigo-300 transition">Log In</a></li>
+          <li><a href="aboutus.html" class="hover:text-indigo-300 transition">About Us</a></li>
+          <li><a href="actividades.html" class="hover:text-indigo-300 transition">Activities</a></li>
+          <li><a href="formulario.html" class="hover:text-indigo-300 transition">Booking</a></li>
+        </ul>
+      </div>
+      
+      <!-- Categorías -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">CATEGORIES</h3>
+        <ul class="space-y-2">
+          <li><a href="alojamiento.html" class="hover:text-indigo-300 transition">Accommodation</a></li>
+          <li><a href="restaurantes.html" class="hover:text-indigo-300 transition">Restaurants</a></li>
+          <li><a href="guias.html" class="hover:text-indigo-300 transition">Guides</a></li>
+          <li><a href="transporte.html" class="hover:text-indigo-300 transition">Transportation</a></li>
+        </ul>
+      </div>
+      
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">NEWSLETTER</h3>
+        <p class="mb-4 text-indigo-200">Subscribe to receive offers</p>
+        <div class="flex">
+          <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-800">
+          <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r transition">Send</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Pie inferior -->
+    <div class="border-t border-indigo-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center mb-4 md:mb-0">
+        <img src="img/Wonderlust-removebg-preview.png" alt="Logo" class="h-12 w-12 mr-3">
+        <span class="text-xl font-bold">Wanderlust</span>
+      </div>
+      
+      <div class="text-indigo-300 text-sm mb-4 md:mb-0">
+        © 2025 Wanderlust - All rights reserved
+      </div>
+      
+      <div class="flex space-x-4">
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+    // Function to open the modal with activity details
+    function openActivityModal(title, category, price, description, imageSrc) {
+        const modal = document.getElementById('activityModal');
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalCategory').textContent = category;
+        document.getElementById('modalPrice').textContent = price;
+        document.getElementById('modalDescription').textContent = description;
+        
+        // Make sure the image exists before trying to change it
+        const modalImage = document.getElementById('modalImage');
+        if (modalImage) {
+            modalImage.src = imageSrc;
+            modalImage.alt = title;
+        }
+        
+        modal.classList.remove('hidden');
+        
+        // Set up listeners for payment methods
+        const creditCardRadio = document.getElementById('credit-card');
+        const paypalRadio = document.getElementById('paypal');
+        
+        if (creditCardRadio && paypalRadio) {
+            creditCardRadio.addEventListener('change', function() {
+                document.getElementById('creditCardFields').classList.remove('hidden');
+                document.getElementById('paypalFields').classList.add('hidden');
+            });
+            
+            paypalRadio.addEventListener('change', function() {
+                document.getElementById('creditCardFields').classList.add('hidden');
+                document.getElementById('paypalFields').classList.remove('hidden');
+            });
+        }
+    }
+    
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById('activityModal').classList.add('hidden');
+    }
+    
+    // Handle payment form submission
+    const paymentForm = document.getElementById('paymentForm');
+    if (paymentForm) {
+        paymentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('date').value;
+            
+            if (!name || !email || !date) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Here would go the actual payment processing logic
+            // For now we just show a success message
+            alert('Booking completed successfully! You will receive an email with the details.');
+            closeModal();
+        });
+    }
+    
+    // Assign events to all "View details" buttons in a more robust way
+    document.addEventListener('DOMContentLoaded', function() {
+        const detailLinks = document.querySelectorAll('a[href="#"], a[href="javascript:void(0)"]');
+        
+        detailLinks.forEach(link => {
+            if (link.textContent.includes('View details') || link.textContent.includes('More info →')) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get activity data from the card
+                    const card = this.closest('.bg-white.rounded-xl'); // More specific selector
+                    if (!card) return;
+                    
+                    const titleElement = card.querySelector('h3.text-xl, h3.text-lg');
+                    const categoryElement = card.querySelector('p.text-xs');
+                    const priceElement = card.querySelector('span.text-indigo-600');
+                    const descriptionElement = card.querySelector('p.text-gray-600, p.text-sm');
+                    const imageElement = card.querySelector('img');
+                    
+                    if (!titleElement || !categoryElement || !priceElement || !descriptionElement || !imageElement) return;
+                    
+                    openActivityModal(
+                        titleElement.textContent.trim(),
+                        categoryElement.textContent.trim(),
+                        priceElement.textContent.trim(),
+                        descriptionElement.textContent.trim(),
+                        imageElement.src
+                    );
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <link rel="icon" href="img/Wonderlust-removebg-preview.png">
+
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-20 bg-white border-r border-gray-200">
+            <div class="h-full flex flex-col items-center py-4">
+                <!-- Logo -->
+                <a href="Inicio.html" class="flex items-center justify-center bg-indigo-600 w-10 h-10 rounded-full hover:bg-indigo-700 transition-all duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </a>
+
+                <!-- Navigation -->
+                <nav class="flex-1 w-full px-2 space-y-2 mt-6">
+
+
+                    <button data-section="informacion" class="sidebar-btn w-full p-3 flex justify-center rounded-lg text-gray-500 hover:bg-gray-50" title="Mi Información">
+                        <i class="fas fa-user text-xl"></i>
+                    </button>
+
+                    <button data-section="reservados" class="sidebar-btn w-full p-3 flex justify-center rounded-lg text-gray-500 hover:bg-gray-50" title="Reservados">
+                        <i class="fas fa-calendar-check text-xl"></i>
+                    </button>
+
+                    <button data-section="comprados" class="sidebar-btn w-full p-3 flex justify-center rounded-lg text-gray-500 hover:bg-gray-50" title="Comprados">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                    </button>
+                </nav>
+
+                <!-- User Profile -->
+                <a href="perfil.html" class="bg-indigo-900 px-2 py-2 rounded-full hover:brightness-200 transition">
+                    <svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+
+                <!-- Mini apartado para cerrar sesión -->
+                <button id="logout-btn" class="group relative flex items-center justify-center p-2 text-gray-500 hover:text-red-500 transition-colors" title="Cerrar sesión">
+                    <i class="fas fa-sign-out-alt text-xl"></i>
+                    <span class="logout-tooltip absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        Log out
+                    </span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6 bg-gray-100 overflow-y-auto">
+
+            <!-- Sección Información (oculta por defecto) -->
+            <div id="informacion" class="section-content hidden">
+                <h1 class="text-2xl font-semibold text-gray-900 mb-6">My Information</h1>
+                <div class="bg-white rounded-lg shadow-md p-6 max-w-2xl">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" value="Juan Pérez" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" value="juansito@gmail.com" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Phone</label>
+                                <input type="tel" value="+503 2346 7890" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Address</label>
+                                <input type="text" value="Las lomas" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label class="block text-gray-700 mb-2">About me</label>
+                            <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" rows="3">Wanderlust has improved the way I travel.</textarea>
+                        </div>
+                        <div class="mt-6 flex justify-end">
+                            <button type="button" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                Save changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sección Reservados (oculta por defecto) -->
+            <div id="reservados" class="section-content hidden">
+                <h1 class="text-2xl font-semibold text-gray-900 mb-6">My Reservations</h1>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">State</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="https://playaciudadomontana.wordpress.com/wp-content/uploads/2020/02/pueblo-concepcic3b3n-de-ataco.jpg?w=1000&h=617&crop=1" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Weekend plan (🌸 Ruta de Las Flores Weekend
+)</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">15/08/2025</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <button class="text-indigo-600 hover:text-indigo-900 mr-3">See</button>
+                                    <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="https://www.turismoitalianews.it/images/stories/el_Salvador/ElTunco_CitySurf_ElSalvador_01.jpg" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Surf en el tunco</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">10/06/2025</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Earring</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <button class="text-indigo-600 hover:text-indigo-900 mr-3">See</button>
+                                    <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sección Comprados (oculta por defecto) -->
+            <div id="comprados" class="section-content hidden">
+                <h1 class="text-2xl font-semibold text-gray-900 mb-6">About my purchases</h1>
+                <div class="space-y-4">
+                    <!-- Tarjeta de compra -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-medium text-lg">Surf en el tunco</h3>
+                                <p class="text-gray-600">Date: 15/08/2025</p>
+                                <p class="text-gray-600">Total: $495.99</p>
+                            </div>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">Successful purchase</span>
+                        </div>
+                        
+                        <div class="mt-4 border-t pt-4">
+
+                        
+                        
+                        <div class="mt-4 flex justify-end">
+<button class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 open-review-btn">
+    Submit a review
+</button>
+                        </div>
+                    </div>
+                                                </div>
+
+                    
+                    <!-- Otra tarjeta de compra -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-medium text-lg">Weekend plan (🌸 Ruta de Las Flores Weekend)</h3>
+                                <p class="text-gray-600">Date: 01/06/2023</p>
+                                <p class="text-gray-600">Total: $79.99</p>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">Successful purchase</span>
+                        </div>
+                        
+                        <div class="mt-4 border-t pt-4">
+
+                        
+                        <div class="mt-4 flex justify-end">
+<button class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 open-review-btn">
+    Submit a review
+</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    </div>
+
+    <!-- Modal de confirmación para cerrar sesión (oculto por defecto) -->
+    <div id="logout-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg p-6 max-w-sm w-full">
+            <h3 class="text-lg font-medium text-gray-900 mb-4">Are you sure you want to log out?</h3>
+            <div class="flex justify-end space-x-3">
+                <button id="cancel-logout" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                    Cancel
+                </button>
+                <button id="confirm-logout" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">
+                    Log out
+                </button>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal de reseña (oculto por defecto) -->
+<div id="review-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg p-6 max-w-md w-full">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-medium text-gray-900">Write your review</h3>
+            <button id="close-review-modal" class="text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <form id="review-form">
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Review title</label>
+                <input type="text" id="review-title" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Qualification</label>
+                <div class="flex space-x-1">
+                    <button type="button" class="star-rating" data-rating="1">
+                        <i class="far fa-star text-2xl text-gray-400"></i>
+                    </button>
+                    <button type="button" class="star-rating" data-rating="2">
+                        <i class="far fa-star text-2xl text-gray-400"></i>
+                    </button>
+                    <button type="button" class="star-rating" data-rating="3">
+                        <i class="far fa-star text-2xl text-gray-400"></i>
+                    </button>
+                    <button type="button" class="star-rating" data-rating="4">
+                        <i class="far fa-star text-2xl text-gray-400"></i>
+                    </button>
+                    <button type="button" class="star-rating" data-rating="5">
+                        <i class="far fa-star text-2xl text-gray-400"></i>
+                    </button>
+                </div>
+                <input type="hidden" id="rating-value" name="rating" required>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Comment</label>
+                <textarea id="review-comment" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
+            </div>
+            
+            <div class="flex justify-end space-x-3">
+                <button type="button" id="cancel-review" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                    Cancel
+                </button>
+                <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">
+                    Submit review
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <script>
+        // Mostrar modal al hacer clic en cerrar sesión
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            document.getElementById('logout-modal').classList.remove('hidden');
+        });
+
+        // Cancelar cierre de sesión
+        document.getElementById('cancel-logout').addEventListener('click', function() {
+            document.getElementById('logout-modal').classList.add('hidden');
+        });
+
+        // Confirmar cierre de sesión (aquí iría tu lógica real)
+        document.getElementById('confirm-logout').addEventListener('click', function() {
+            alert('Sesión cerrada - Redirigiendo...');
+            // window.location.href = '/logout'; // Descomenta esta línea para redirigir
+            document.getElementById('logout-modal').classList.add('hidden');
+            window.location.href = 'index.html'; // Cambia a tu página de login/inicio
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarButtons = document.querySelectorAll('.sidebar-btn');
+            const sectionContents = document.querySelectorAll('.section-content');
+            
+            // Función para cambiar de sección
+            function showSection(sectionId) {
+                // Ocultar todos los contenidos
+                sectionContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Mostrar el contenido seleccionado
+                document.getElementById(sectionId).classList.remove('hidden');
+                
+                // Actualizar estado activo de los botones
+                sidebarButtons.forEach(button => {
+                    if (button.getAttribute('data-section') === sectionId) {
+                        button.classList.remove('text-gray-500', 'hover:bg-gray-50');
+                        button.classList.add('bg-indigo-50', 'text-indigo-600');
+                    } else {
+                        button.classList.remove('bg-indigo-50', 'text-indigo-600');
+                        button.classList.add('text-gray-500', 'hover:bg-gray-50');
+                    }
+                });
+            }
+            
+            // Añadir event listeners a los botones
+            sidebarButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    showSection(sectionId);
+                });
+            });
+            
+            // Mostrar la sección de favoritos por defecto
+            showSection('favoritos');
+        });
+
+// Funcionalidad para el modal de reseña
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleccionar todos los botones "Enviar una reseña"
+    const reviewButtons = document.querySelectorAll('.bg-indigo-600.text-white.rounded-lg');
+    
+    // Configurar el modal de reseña
+    const reviewModal = document.getElementById('review-modal');
+    const closeReviewModal = document.getElementById('close-review-modal');
+    const cancelReview = document.getElementById('cancel-review');
+    const reviewForm = document.getElementById('review-form');
+    const starRatings = document.querySelectorAll('.star-rating');
+    const ratingValue = document.getElementById('rating-value');
+    
+    // Abrir modal al hacer clic en cualquier botón "Enviar una reseña"
+    reviewButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Aquí podrías obtener información sobre la compra específica
+            // para personalizar el modal si es necesario
+            reviewModal.classList.remove('hidden');
+        });
+    });
+    
+    // Cerrar modal con el botón X
+    closeReviewModal.addEventListener('click', function() {
+        reviewModal.classList.add('hidden');
+        resetReviewForm();
+    });
+    
+    // Cerrar modal con el botón Cancelar
+    cancelReview.addEventListener('click', function() {
+        reviewModal.classList.add('hidden');
+        resetReviewForm();
+    });
+    
+    // Funcionalidad de estrellas para la calificación
+    starRatings.forEach(star => {
+        star.addEventListener('click', function() {
+            const rating = parseInt(this.getAttribute('data-rating'));
+            ratingValue.value = rating;
+            
+            // Actualizar la visualización de las estrellas
+            starRatings.forEach((s, index) => {
+                const starIcon = s.querySelector('i');
+                if (index < rating) {
+                    starIcon.classList.remove('far', 'text-gray-400');
+                    starIcon.classList.add('fas', 'text-yellow-400');
+                } else {
+                    starIcon.classList.remove('fas', 'text-yellow-400');
+                    starIcon.classList.add('far', 'text-gray-400');
+                }
+            });
+        });
+    });
+    
+    // Enviar el formulario de reseña
+    reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Aquí iría la lógica para enviar la reseña al servidor
+        const title = document.getElementById('review-title').value;
+        const rating = ratingValue.value;
+        const comment = document.getElementById('review-comment').value;
+        
+        console.log('Reseña enviada:', {
+            title,
+            rating,
+            comment
+        });
+        
+        // Mostrar confirmación
+        alert('¡Gracias por tu reseña!');
+        
+        // Cerrar el modal y resetear el formulario
+        reviewModal.classList.add('hidden');
+        resetReviewForm();
+    });
+    
+    // Función para resetear el formulario de reseña
+    function resetReviewForm() {
+        reviewForm.reset();
+        ratingValue.value = '';
+        
+        // Resetear estrellas
+        starRatings.forEach(star => {
+            const starIcon = star.querySelector('i');
+            starIcon.classList.remove('fas', 'text-yellow-400');
+            starIcon.classList.add('far', 'text-gray-400');
+        });
+    }
+});
+
+    </script>
+</body>
+</html>

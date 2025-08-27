@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tour Guides in El Salvador | Local Experts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="img/Wonderlust-removebg-preview.png">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            },
+            secondary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          },
+          animation: {
+            'gradient-x': 'gradient-x 10s ease infinite',
+            'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+          },
+          keyframes: {
+            'gradient-x': {
+              '0%, 100%': {
+                'background-position': '0% 50%'
+              },
+              '50%': {
+                'background-position': '100% 50%'
+              }
+            },
+            'fade-in-up': {
+              '0%': {
+                opacity: '0',
+                transform: 'translateY(20px)'
+              },
+              '100%': {
+                opacity: '1',
+                transform: 'translateY(0)'
+              }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<!-- MENU SUPERIOR -->
+<header class="bg-white shadow-lg sticky top-0 z-50">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="Inicio.html" class="flex items-center space-x-1">
+      <img src="img/Wonderlust-removebg-preview.png" alt="Wanderlust Icono" class="h-20 w-20">
+    </a>
+
+    <!-- Navegación en desktop -->
+    <nav class="hidden md:flex space-x-8 items-center">
+      <a href="aboutuss.html" class="text-gray-700 font-bold hover:text-indigo-600 transition">About Us</a>
+      <a href="paquetes.html" class="text-gray-700 font-bold hover:text-indigo-600 transition">Packages</a>
+      <a href="Inicio.html" class="text-gray-700 font-bold hover:text-indigo-600 transition">Travel support</a>
+      <a href="actividades.html" class="text-gray-700 font-bold hover:text-indigo-600 transition">Activities</a> 
+      <a href="perfil.html" class="bg-indigo-900 ml-4 px-2 py-2 rounded-full hover:brightness-200 transition">
+        <svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Botón móvil -->
+    <button class="md:hidden text-gray-700 text-2xl focus:outline-none" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <!-- Menú para móviles -->
+  <div id="mobileMenu" class="md:hidden px-6 pb-4 hidden bg-white shadow-inner">
+    <a href="aboutuss.html" class="block py-2 text-gray-700 hover:text-blue-600">About Us</a>
+    <a href="#paquetes" class="block py-2 text-gray-700 hover:text-blue-600">Packages</a>
+    <a href="#destinos" class="block py-2 text-gray-700 hover:text-blue-600">Destinations</a>
+    <a href="actividades.html" class="block py-2 text-gray-700 hover:text-blue-600">Activities</a>
+    <a href="perfil.html" class="block py-2 text-gray-700 hover:text-blue-600">My Profile</a>
+  </div>
+</header>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+</script>
+
+<br><br><br>
+
+<body class="font-poppins bg-gray-50 text-gray-800">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-16 pt-8">
+      <span class="text-indigo-600 font-bold tracking-widest uppercase">Meet the local experts</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2 mb-4">Certified Tour Guides of El Salvador</h1>
+      <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+      <p class="max-w-2xl mx-auto text-lg text-gray-600">Local professionals will show you the best of El Salvador with safety, knowledge, and a passion for our cultural and natural heritage.</p>
+    </div>
+
+<!-- Filtro de búsqueda -->
+<div class="container mx-auto px-4 py-8">
+  <div class="max-w-2xl mx-auto relative mb-12">
+    <input 
+      type="text" 
+      id="buscadorGuias" 
+      placeholder="Search for guides by name, specialty, or location..." 
+      aria-label="Find tour guides"
+      class="w-full px-6 py-4 rounded-full border-2 border-primary-600 focus:border-primary-800 focus:ring-2 focus:ring-primary-300 text-lg font-medium placeholder-gray-400 transition-all duration-300 shadow-md hover:shadow-lg focus:shadow-xl focus:outline-none"
+    />
+    <svg class="absolute right-6 top-4 h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+  </div>
+
+  <!-- Filtros por categoría -->
+  <div class="flex flex-wrap justify-center gap-4 mb-12">
+    <button class="filter-btn px-6 py-2 rounded-full bg-primary-600 text-white font-medium hover:bg-primary-700 transition-all shadow-md hover:shadow-lg active:scale-95" data-category="all">
+        All
+    </button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 transition-all shadow-md hover:shadow-lg active:scale-95" data-category="aventura">
+      Adventure
+    </button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 transition-all shadow-md hover:shadow-lg active:scale-95" data-category="cultural">
+      Cultural
+    </button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 transition-all shadow-md hover:shadow-lg active:scale-95" data-category="arqueologia">
+      Archeology
+    </button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 transition-all shadow-md hover:shadow-lg active:scale-95" data-category="playa">
+      Beach/Nature
+    </button>
+  </div>
+
+  <!-- Sección de guías -->
+  <div class="space-y-16">
+    <!-- Guías de Aventura -->
+    <section id="aventura">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-800 relative">
+        <span class="relative inline-block">
+          Adventure and Nature Guides
+        </span>
+      </h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-100" data-category="aventura">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+              alt="Carlos Martínez" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Adventure
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Carlos Martínez</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(48 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Certified guide with eight years of experience in hiking and extreme sports. Specializes in routes through El Imposible National Park and volcanoes. Certified in first aid and mountain rescue.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Santa Ana / Apaneca
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Español, Inglés
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$80/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-200" data-category="aventura">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+              alt="María Rodríguez" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Adventure
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">María Rodríguez</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(36 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Specialized surf and water sports guide with 10 years of experience. She organizes surf tours in El Tunco, El Sunzal, and La Libertad. Certified as a surf instructor by the ISA (International Surfing Association).</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              La Libertad / El Tunco
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English, Portuguese
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$95/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-300" data-category="aventura">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+              alt="Luis Hernández" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Adventure
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Luis Hernández</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(72 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Expert in mountain and volcano routes with 12 years of experience. Guide certified by the Ministry of Tourism. Specializes in ascents to Santa Ana Volcano, Izalco, and Cerro Verde routes. Professional equipment included.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              San Salvador / Volcanes
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English, Portuguese
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$120/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-400" data-category="aventura">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+              alt="Andrea Gómez" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Adventure
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Mauricio Fuentes</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(29 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Ecotourism and birdwatching specialist. Certified guide in Montecristo National Park and cloud forests. Offers customized tours for the sighting of more than 200 species of local birds.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Metapán / Montecristo
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$75/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guías Culturales -->
+    <section id="cultural">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-800 relative">
+        <span class="relative inline-block">
+          Cultural and Historical Guides
+        </span>
+      </h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-100" data-category="cultural">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHunX1uIxue3Q4Pmbsrjuoa0hvNbP2VZBmsA&s" 
+              alt="Ana García" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Cultural
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Ana García</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(64 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Historian specializing in Salvadoran culture with a master's degree in anthropology. She offers tours along the Flower Route, explaining traditions, colonial architecture, and local festivals. She has 15 years of experience.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Ahuachapán / Sonsonate
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English, Italian
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$75/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-200" data-category="cultural">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+              alt="Sofía Ramírez" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Cultural
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Sofía Ramírez</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(42 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Expert in colonial art and architecture with a background in Fine Arts. Offers detailed tours of Suchitoto, Joya de Cerén, and historic towns. Specializes in colonial religious art and restoration techniques.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Cuscatlán / Suchitoto
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English, German
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$85/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-300" data-category="cultural">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+              alt="Roberto Vásquez" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Cultural
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Roberto Vásquez</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(58 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Specialist in gastronomy and local traditions. Internationally trained chef who offers culinary tours of traditional markets, pupusa workshops, and coffee tastings. Experience in gastronomic tourism since 2010.
+ <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              San Salvador / Mercados
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English, French
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$90/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-400" data-category="cultural">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+              alt="Carmen Henríquez" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Cultural
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Julio Posada</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(31 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Expert in indigenous crafts and textiles. Certified guide offering tours of artisan workshops, explaining ancestral weaving, ceramics, and indigo techniques. Connecting with local communities for authentic experiences.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              La Palma / Chalatenango
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$65/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guías Arqueológicos -->
+    <section id="arqueologia">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-800 relative">
+        <span class="relative inline-block">
+          Archaeological Guides
+        </span>
+      </h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-100" data-category="arqueologia">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KSrKnQ2zGZuFikMF5QDQpgsWaXHaiMlxCw&s" 
+              alt="Miguel Ángel Ruíz" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Archeology
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Miguel Ángel Ruíz</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(52 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Certified archaeologist specializing in Mayan culture. 18 years of experience guiding in Joya de Cerén, San Andrés, and Tazumal. Former excavation director at Cihuatán. Member of the Central American Archaeologists Association.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Santa Ana / Sitios Arqueológicos
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English, Mayan
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$110/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-200" data-category="arqueologia">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://www.cefapit.com/wp-content/uploads/2019/08/140577726-624x812.jpg" 
+              alt="Laura Mendoza" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Archeology
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Laura Mendoza</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(37 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Specialist in Joya de Cerén (Pompeii of the Americas) with a master's degree in Anthropology. He has been an official guide at the site for 10 years. He offers comparative tours between Joya de Cerén and other archaeological sites in the region.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              La Libertad / Joya de Cerén
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English, French
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$95/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-300" data-category="arqueologia">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFKL2dE105CWC66C3jatUD5OsghgbW33Tt1Q&s" 
+              alt="Oscar Herrera" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Archeology
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Oscar Herrera</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(68 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Expert on Tazumal and the Mayan influence in El Salvador. Certified guide with 15 years of experience. Offers tours specializing in Mayan astronomy and its relationship to local archaeological structures.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Chalchuapa / Tazumal
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English, German
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$100/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-400" data-category="arqueologia">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn6yFcnrCEzSHfAY9REZmgiC1DJZi5zxMmqQ&s" 
+              alt="Elena Campos" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Archeology
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Elena Campos</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(29 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Specializing in lesser-known archaeological sites such as Cihuatán, Casa Blanca, and Quelepa, he offers alternative tours off the beaten track with an emphasis on the daily life of pre-Columbian peoples.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              San Salvador / Sitios diversos
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$80/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guías de Playa/Naturaleza -->
+    <section id="playa">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-800 relative">
+        <span class="relative inline-block">
+          Beach and Nature Guides
+        </span>
+      </h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-100" data-category="playa">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxWnJzAH0BhJHIPbLsjmOIwLtX0FNFtsIjKw&s" 
+              alt="Javier Solís" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Beach/Nature
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Javier Solís</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(61 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Coastal ecotourism specialist. Certified sea turtle and mangrove guide. Organizes turtle-watching tours, snorkeling in Los Cóbanos, and kayaking through estuaries. 12 years of experience.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Sonsonate / Los Cóbanos
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$85/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-200" data-category="playa">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcvysmOZM-4y9qg-uYNAbwcO6ft7qBdBI4S125KwUkYT-z8dVok8jrVmJaXKsAKE7ehVQ&usqp=CAU" 
+              alt="Isabel Morán" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Beach/Nature
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Isabel Morán</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(43 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Marine biologist specializing in coastal ecosystems. She offers educational tours about the biodiversity of Salvadoran beaches, including dolphin watching and reef snorkeling. She is a PADI certified dive guide.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              La Unión / Golfo de Fonseca
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English, French
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$110/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-300" data-category="playa">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+              alt="Ricardo Flores" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Beach/Nature
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Ricardo Flores</h3>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-600 text-sm ml-2">(55 reviews)</span>
+            </div>
+            <p class="text-gray-500 mb-3">Specialist in sport fishing and boat tours. Knows the best spots to fish for dorado, marlin, and sailfish. Offers customized tours to pristine beaches and secret bays along the Salvadoran coast.</p>
+            <div class="flex items-center text-sm text-gray-600 mb-3">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              La Libertad / Costa del Sol
+            </div>
+            <div class="flex items-center text-sm text-gray-600 mb-4">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.842 2.656 3.02-1.764c.95.275 1.972.425 3.033.425 4.97 0 9-3.186 9-7.115C21 6.186 16.97 3 12 3z"/>
+              </svg>
+              Spanish, English
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-bold text-primary-700">US$150/day</span>
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Contact
+</button>
+            </div>
+          </div>
+        </div>
+
+
+<!-- Modal de Pago -->
+<div id="modalPagoGuia" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+    <!-- Fondo oscuro -->
+    <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+      <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+    
+    <!-- Contenido del modal -->
+    <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4" id="modal-title">Confirm and Pay</h3>
+        
+        <!-- Resumen del Servicio -->
+        <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+
+          <hr class="my-2 border-gray-200">
+          <p class="text-lg font-bold text-gray-900 mt-2">Total: <span id="precio-tour-modal">$120.00 USD</span></p>
+        </div>
+        
+
+          <!-- Selector de Fecha y Hora -->
+          <div class="grid grid-cols-2 gap-4 mt-3">
+            <div>
+              <label for="fecha-tour" class="block text-sm font-medium text-gray-700 mb-1">Date*</label>
+              <input 
+                type="date" 
+                id="fecha-tour" 
+                min="2023-11-01" 
+                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500"
+                required
+              >
+            </div>
+            <div>
+              <label for="hora-tour" class="block text-sm font-medium text-gray-700 mb-1">Hour*</label>
+              <input 
+                type="time" 
+                id="hora-tour" 
+                min="08:00" 
+                max="18:00" 
+                step="1800"  
+                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500"
+                required
+              >
+          </div>
+          
+
+        </div>
+<br>
+        <!-- Métodos de Pago -->
+        <form id="formPagoGuia">
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Payment method*</label>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <input id="tarjeta" name="metodo-pago" type="radio" class="focus:ring-primary500 h-4 w-4 text-primary600 border-gray-300" checked>
+                <label for="tarjeta" class="ml-2 block text-sm text-gray-700">Credit/Debit Card</label>
+              </div>
+              <div class="flex items-center">
+                <input id="paypal" name="metodo-pago" type="radio" class="focus:ring-primary500 h-4 w-4 text-primary600 border-gray-300">
+                <label for="paypal" class="ml-2 block text-sm text-gray-700">PayPal</label>
+              </div>
+              <div class="flex items-center">
+                <input id="transferencia" name="metodo-pago" type="radio" class="focus:ring-primary500 h-4 w-4 text-primary600 border-gray-300">
+                <label for="transferencia" class="ml-2 block text-sm text-gray-700">Bank transfer</label>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Datos de Tarjeta (condicional) -->
+          <div id="datos-tarjeta" class="bg-gray-50 p-4 rounded-lg mb-4">
+            <div class="grid grid-cols-2 gap-4 mb-3">
+              <div>
+                <label for="numero-tarjeta" class="block text-sm font-medium text-gray-700 mb-1">Card number*</label>
+                <input type="text" id="numero-tarjeta" placeholder="1234 5678 9012 3456" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500">
+              </div>
+              <div>
+                <label for="cvv" class="block text-sm font-medium text-gray-700 mb-1">CVV*</label>
+                <input type="text" id="cvv" placeholder="123" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500">
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="fecha-expiracion" class="block text-sm font-medium text-gray-700 mb-1">Expiration date*</label>
+                <input type="text" id="fecha-expiracion" placeholder="MM/AA" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500">
+              </div>
+              <div>
+                <label for="nombre-tarjeta" class="block text-sm font-medium text-gray-700 mb-1">Name on card*</label>
+                <input type="text" id="nombre-tarjeta" placeholder="Ej: Juan Pérez" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Términos y condiciones -->
+          <div class="mb-4 flex items-start">
+            <div class="flex items-center h-5">
+              <input id="terminos-pago" type="checkbox" class="focus:ring-primary500 h-4 w-4 text-primary600 border-gray-300 rounded" required>
+            </div>
+            <label for="terminos-pago" class="ml-2 block text-sm text-gray-700">
+              I accept the<a href="#" class="text-primary600 hover:underline">cancellation terms</a> and <a href="#" class="text-primary600 hover:underline">privacy policy</a>.
+            </label>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Botones -->
+      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <button type="button" id="confirmarPago" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-900 text-base font-medium text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary500 sm:ml-3 sm:w-auto sm:text-sm">
+          Pay now
+        </button>
+        <button type="button" id="cerrarModalPago" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script para mostrar/ocultar datos de tarjeta -->
+<script>
+  document.querySelectorAll('input[name="metodo-pago"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      document.getElementById('datos-tarjeta').style.display = 
+        e.target.id === 'tarjeta' ? 'block' : 'none';
+    });
+  });
+</script>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    <br><br><br><br><br><br><br><br>
+
+
+<!-- FOOTER -->
+<footer class="bg-indigo-900 text-white">
+  <div class="container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Menú -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">MENU</h3>
+        <ul class="space-y-2">
+          <li><a href="Inicio.html" class="hover:text-indigo-300 transition">Home</a></li>
+          <li><a href="#apoyoviajes" class="hover:text-indigo-300 transition">Travel support</a></li>
+          <li><a href="#paquetes" class="hover:text-indigo-300 transition">Packages</a></li>
+        </ul>
+      </div>
+      
+      <!-- Páginas -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">PAGES</h3>
+        <ul class="space-y-2">
+          <li><a href="loginregistration.html" class="hover:text-indigo-300 transition">Log In</a></li>
+          <li><a href="aboutus.html" class="hover:text-indigo-300 transition">About Us</a></li>
+          <li><a href="actividades.html" class="hover:text-indigo-300 transition">Activities</a></li>
+          <li><a href="formulario.html" class="hover:text-indigo-300 transition">Booking</a></li>
+        </ul>
+      </div>
+      
+      <!-- Categorías -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">CATEGORIES</h3>
+        <ul class="space-y-2">
+          <li><a href="alojamiento.html" class="hover:text-indigo-300 transition">Accomodation</a></li>
+          <li><a href="restaurantes.html" class="hover:text-indigo-300 transition">Restaurants</a></li>
+          <li><a href="guias.html" class="hover:text-indigo-300 transition">Guides</a></li>
+          <li><a href="transporte.html" class="hover:text-indigo-300 transition">Transport</a></li>
+        </ul>
+      </div>
+      
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">NEWSLETTER</h3>
+        <p class="mb-4 text-indigo-200">Subscribe to receive offers</p>
+        <div class="flex">
+          <input type="email" placeholder="Tu email" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-800">
+          <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r transition">Send</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Pie inferior -->
+    <div class="border-t border-indigo-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center mb-4 md:mb-0">
+        <img src="img/Wonderlust-removebg-preview.png" alt="Logo" class="h-12 w-12 mr-3">
+        <span class="text-xl font-bold">Wanderlust</span>
+      </div>
+      
+      <div class="text-indigo-300 text-sm mb-4 md:mb-0">
+        © 2025 Wanderlust - All rights reserved
+      </div>
+      
+      <div class="flex space-x-4">
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Elementos 
+    const buscador = document.getElementById('buscadorGuias');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cardItems = document.querySelectorAll('.card-item');
+    const sections = document.querySelectorAll('section');
+
+    // Función para filtrar guías
+    function filterGuides() {
+      const searchTerm = buscador.value.toLowerCase();
+      const activeCategory = document.querySelector('.filter-btn.bg-primary-600')?.dataset.category || 'all';
+
+      // Variables para controlar si una sección tiene resultados
+      const sectionHasResults = {};
+      
+      // Inicializar secciones
+      sections.forEach(section => {
+        const sectionId = section.id;
+        sectionHasResults[sectionId] = false;
+      });
+
+      // Filtrar tarjetas
+      cardItems.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const cardCategory = card.dataset.category || card.closest('section').id;
+        
+        // Comprobar si coincide con la búsqueda y la categoría
+        const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+        const matchesCategory = activeCategory === 'all' || cardCategory === activeCategory;
+        
+        if (matchesSearch && matchesCategory) {
+          card.style.display = 'block';
+          sectionHasResults[card.closest('section').id] = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Mostrar/ocultar secciones según si tienen resultados
+      sections.forEach(section => {
+        const sectionId = section.id;
+        const hasResults = sectionHasResults[sectionId];
+        
+        // Mostrar sección si coincide con la categoría activa o es "all"
+        const sectionCategory = section.dataset.category || sectionId;
+        const shouldShow = hasResults && (activeCategory === 'all' || activeCategory === sectionCategory);
+        
+        section.style.display = shouldShow ? 'block' : 'none';
+      });
+    }
+
+    // Evento para el buscador
+    buscador.addEventListener('input', filterGuides);
+
+    // Eventos para los botones de filtro
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Cambiar estilos de los botones
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-primary-600', 'text-white');
+          btn.classList.add('bg-gray-200', 'text-gray-800');
+        });
+        
+        this.classList.remove('bg-gray-200', 'text-gray-800');
+        this.classList.add('bg-primary-600', 'text-white');
+        
+        // Aplicar filtros
+        filterGuides();
+      });
+    });
+
+    // Inicializar mostrando todas las guías
+    filterGuides();
+  });
+</script>
+
+
+
+
+
+
+
+
+<script>
+  // Función para abrir el modal
+  function abrirModal() {
+    const modal = document.getElementById('modalPagoGuia');
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Evita scroll en el fondo
+  }
+
+  // Función para cerrar el modal
+  function cerrarModal() {
+    const modal = document.getElementById('modalPagoGuia');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Restaura el scroll
+  }
+
+  // Event listeners
+  document.getElementById('cerrarModalPago').addEventListener('click', cerrarModal);
+  document.getElementById('confirmarPago').addEventListener('click', function() {
+    // Validación del formulario
+    if(document.getElementById('modalPagoGuia').checkValidity()) {
+      alert('Reserva confirmada!');
+      cerrarModal();
+    } else {
+      alert('Por favor completa todos los campos requeridos');
+    }
+  });
+</script>
+</body>
+</html>

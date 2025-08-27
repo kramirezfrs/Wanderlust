@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restaurants in El Salvador</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="img/Wonderlust-removebg-preview.png">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            },
+            secondary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          },
+          animation: {
+            'gradient-x': 'gradient-x 10s ease infinite',
+            'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+          },
+          keyframes: {
+            'gradient-x': {
+              '0%, 100%': {
+                'background-position': '0% 50%'
+              },
+              '50%': {
+                'background-position': '100% 50%'
+              }
+            },
+            'fade-in-up': {
+              '0%': {
+                opacity: '0',
+                transform: 'translateY(20px)'
+              },
+              '100%': {
+                opacity: '1',
+                transform: 'translateY(0)'
+              }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+
+</head>
+<!-- MENU SUPERIOR -->
+<header class="bg-white shadow-lg">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="Inicio.html" class="flex items-center space-x-1">
+      <img src="img/Wonderlust-removebg-preview.png" alt="Wanderlust Icono" class="h-20 w-20">
+    </a>
+
+    <!-- Navegación en desktop -->
+    <nav class="hidden md:flex space-x-8 items-center">
+      <a href="aboutuss.html" class="text-gray-700 font-bold hover:text-indigo-600 transition">About Us</a>
+      <a href="paquetes.html" class="text-gray-700 font-bold hover:text-indigo-600 transition">Packages</a>
+      <a href="Inicio.html" class="text-gray-700 font-bold hover:text-indigo-600 transition">Travel support</a>
+      <a href="actividades.html" class="text-gray-700 font-bold hover:text-indigo-600 transition">Activities</a> 
+      <a href="perfil.html" class="bg-indigo-900 ml-4 px-2 py-2 rounded-full hover:brightness-200 transition">
+<svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z" clip-rule="evenodd"/>
+</svg>
+</a>
+
+
+    </nav>
+
+    <!-- Botón móvil -->
+    <button class="md:hidden text-gray-700 text-2xl focus:outline-none" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <!-- Menú para móviles -->
+  <div id="mobileMenu" class="md:hidden px-6 pb-4 hidden bg-white shadow-inner">
+    <a href="#destacados" class="block py-2 text-gray-700 hover:text-blue-600">Featured</a>
+    <a href="#paquetes" class="block py-2 text-gray-700 hover:text-blue-600">Packages</a>
+    <a href="#apoyoviajes" class="block py-2 text-gray-700 hover:text-blue-600">Travel support</a>
+    <a href="#actividades" class="block py-2 text-gray-700 hover:text-blue-600">Activities</a>
+      <a href="perfil.html" class="bg-indigo-900 ml-4 px-2 py-2 rounded-full hover:brightness-200 transition">
+<svg class="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z" clip-rule="evenodd"/>
+</svg>
+</a>
+  </div>
+</header>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+</script>
+
+ <br><br><br>
+
+
+<body class="font-poppins bg-gray-50 text-gray-800">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-16">
+      <span class="text-indigo-600 font-bold tracking-widest uppercase">Flavors of El Salvador</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2 mb-4">Restaurants</h2>
+      <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+      <p class="max-w-2xl mx-auto text-lg text-gray-600">Discover the best restaurants serving authentic Salvadoran cuisine.</p>
+    </div>
+
+
+
+
+
+<!-- Filtro de búsqueda -->
+<div class="container mx-auto px-4 py-8">
+  <div class="max-w-2xl mx-auto relative mb-12">
+    <input 
+      type="text" 
+      id="buscadorRestaurantes" 
+      placeholder="Search for restaurants..." 
+      aria-label="Search for restaurants..."
+      class="w-full px-6 py-4 rounded-full border-2 border-primary-600 focus:border-primary-800 focus:ring-2 focus:ring-primary-300 text-lg font-medium placeholder-gray-400 transition-all duration-300 shadow-md hover:shadow-lg focus:shadow-xl focus:outline-none"
+    />
+    <svg class="absolute right-6 top-4 h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+  </div>
+
+  <!-- Filtros por categoría -->
+  <div class="flex flex-wrap justify-center gap-4 mb-12">
+    <button class="filter-btn px-6 py-2 rounded-full bg-primary-600 text-white font-medium hover:bg-primary-700 transition-all shadow-md hover:shadow-lg active:scale-95" data-category="all">
+      All
+    </button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 transition-all shadow-md hover:shadow-lg active:scale-95" data-category="typical">
+      Typical Food
+    </button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 transition-all shadow-md hover:shadow-lg active:scale-95" data-category="seafood">
+      Seafood
+    </button>
+    <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 transition-all shadow-md hover:shadow-lg active:scale-95" data-category="international">
+      International
+    </button>
+  </div>
+
+  <!-- Sección de restaurantes -->
+  <div class="space-y-16">
+    <!-- Restaurantes de Comida Típica -->
+    <section>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-800 relative">
+        <span class="relative inline-block">
+          Typical Salvadoran Food
+        </span>
+      </h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-100" data-category="typical">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/la pmpa.jpg" 
+              alt="La Pampa" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Typical
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">La Pampa</h3>
+            <p class="text-gray-500 mb-4">San Salvador</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-500 ml-2">(248)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-200" data-category="typical">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/el zocalo.jpg" 
+              alt="El Zócalo" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Typical
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">El Zócalo</h3>
+            <p class="text-gray-500 mb-4">Santa Tecla</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-500 ml-2">(187)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-300" data-category="typical">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/el tunco.jpg" 
+              alt="El Tunco" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Typical
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Restaurante El Tunco</h3>
+            <p class="text-gray-500 mb-4">Playa El Tunco</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-500 ml-2">(156)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-400" data-category="typical">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/la hola.jpg" 
+              alt="La Hola" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Typical
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">La Hola</h3>
+            <p class="text-gray-500 mb-4">San Salvador</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-500 ml-2">(324)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurantes de Mariscos -->
+    <section>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-800 relative">
+        <span class="relative inline-block">
+          Seafood and Fish
+        </span>
+      </h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-100" data-category="seafood">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/la costa.jpg" 
+              alt="Costa Azul" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Seafood
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Costa Azul</h3>
+            <p class="text-gray-500 mb-4">La Libertad</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-500 ml-2">(213)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-200" data-category="seafood">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/el pescador.webp" 
+              alt="El Pescador" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Seafood
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">El Pescador</h3>
+            <p class="text-gray-500 mb-4">Playa El Tunco</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-500 ml-2">(278)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-300" data-category="seafood">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/bahia dle sol.jpeg" 
+              alt="Bahía del Sol" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Seafood
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Bahía del Sol</h3>
+            <p class="text-gray-500 mb-4">Playa Costa del Sol</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-500 ml-2">(189)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-400" data-category="seafood">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/restaurante lapalapa.jpg" 
+              alt="La Palapa" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Seafood
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">La Palapa</h3>
+            <p class="text-gray-500 mb-4">Playa El Zonte</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-500 ml-2">(142)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurantes Internacionales -->
+    <section>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary-800 relative">
+        <span class="relative inline-block">
+          International Cuisine
+        </span>
+      </h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-100" data-category="international">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/Il bongustaio.jpg" 
+              alt="Il Bongustaio" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              Italian
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Il Bongustaio</h3>
+            <p class="text-gray-500 mb-4">San Salvador</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-500 ml-2">(356)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-200" data-category="international">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/sakura.jpeg" 
+              alt="Sakura" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+           Japanese
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Sakura</h3>
+            <p class="text-gray-500 mb-4">Santa Tecla</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-500 ml-2">(231)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-300" data-category="international">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/la petit.jpeg" 
+              alt="Le Petit" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              French
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Le Petit</h3>
+            <p class="text-gray-500 mb-4">San Salvador</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★★
+              </div>
+              <span class="text-gray-500 ml-2">(412)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="card-item bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-400" data-category="international">
+          <div class="relative h-48 overflow-hidden">
+            <img 
+              src="img/restaurantes/steak house.jpg" 
+              alt="Texas Steakhouse" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+              American
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">Texas Steakhouse</h3>
+            <p class="text-gray-500 mb-4">Santa Tecla</p>
+            <div class="flex items-center mb-2">
+              <div class="flex text-yellow-400">
+                ★★★★☆
+              </div>
+              <span class="text-gray-500 ml-2">(198)</span>
+            </div>
+            <div class="flex justify-between items-center">
+<button 
+  onclick="abrirModal()"
+  class="px-4 py-2 bg-indigo-900 hover:bg-indigo-600 text-white font-medium rounded-full transition-all shadow hover:shadow-md">
+  Reserve
+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+
+<!-- Modal de Reserva para Restaurante -->
+<div id="modalReservaRestaurante" class="fixed inset-0 z-50 hidden overflow-y-auto">
+  <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+    <!-- Fondo oscuro -->
+    <div class="fixed inset-0 bg-gray-500 opacity-75 transition-opacity"></div>
+    
+    <!-- Contenido del modal -->
+    <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Book a table</h3>
+        
+        <form id="formReservaRestaurante">
+          <!-- Datos del Cliente -->
+          <div class="mb-4">
+            <label for="nombre-reserva" class="block text-sm font-medium text-gray-700 mb-1">Name for reservation*</label>
+            <input 
+              type="text" 
+              id="nombre-reserva" 
+              placeholder="Ej: Juan Pérez"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500"
+              required
+            >
+          </div>
+          
+          <!-- Fecha y Hora -->
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div>
+              <label for="fecha-reserva" class="block text-sm font-medium text-gray-700 mb-1">Date*</label>
+              <input 
+                type="date" 
+                id="fecha-reserva" 
+                min="2023-11-01" 
+                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500"
+                required
+              >
+            </div>
+            <div>
+              <label for="hora-reserva" class="block text-sm font-medium text-gray-700 mb-1">Hour*</label>
+              <input 
+                type="time" 
+                id="hora-reserva" 
+                min="11:00" 
+                max="22:00" 
+                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500"
+                required
+              >
+            </div>
+          </div>
+          
+          <!-- Número de Personas -->
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div>
+              <label for="adultos" class="block text-sm font-medium text-gray-700 mb-1">Adults*</label>
+              <input 
+                type="number" 
+                id="adultos" 
+                min="1" 
+                max="20" 
+                value="2"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500"
+                required
+              >
+            </div>
+            <div>
+              <label for="ninos" class="block text-sm font-medium text-gray-700 mb-1">Children (optional)</label>
+              <input 
+                type="number" 
+                id="ninos" 
+                min="0" 
+                max="10" 
+                value="0"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500"
+              >
+            </div>
+          </div>
+          
+          <!-- Comentarios Adicionales -->
+          <div class="mb-4">
+            <label for="comentarios" class="block text-sm font-medium text-gray-700 mb-1">Comments (optional)</label>
+            <textarea 
+              id="comentarios" 
+              rows="2" 
+              placeholder="Ej: Mesa cerca de la ventana, alergias alimentarias..."
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary500 focus:border-primary500"
+            ></textarea>
+          </div>
+          
+          <!-- Confirmación -->
+          <div class="flex items-start mb-4">
+            <div class="flex items-center h-5">
+              <input id="confirmar-reserva" type="checkbox" class="focus:ring-primary500 h-4 w-4 text-primary600 border-gray-300 rounded" required>
+            </div>
+            <label for="confirmar-reserva" class="ml-2 block text-sm text-gray-700">
+              I confirm that this information is correct.
+            </label>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Botones -->
+      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <button type="button" id="enviarReserva" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-900 text-base font-medium text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary500 sm:ml-3 sm:w-auto sm:text-sm">
+          Book a table
+        </button>
+        <button type="button" id="cancelarReserva" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Función para abrir el modal
+  function abrirModal() {
+    const modal = document.getElementById('modalReservaRestaurante');
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Evita scroll en el fondo
+  }
+
+  // Función para cerrar el modal
+  function cerrarModal() {
+    const modal = document.getElementById('modalReservaRestaurante'); // ID corregido
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Restaura el scroll
+  }
+
+  // Asignar event listeners después de que el DOM esté cargado
+  document.addEventListener('DOMContentLoaded', function() {
+    // Listener para cancelar
+    document.getElementById('cancelarReserva').addEventListener('click', cerrarModal);
+    
+    // Listener para confirmar reserva
+    document.getElementById('enviarReserva').addEventListener('click', function() {
+      // Validar el formulario correcto
+      const form = document.getElementById('formReservaRestaurante');
+      if(form.checkValidity()) {
+        alert('Reserva confirmada!');
+        cerrarModal();
+      } else {
+        alert('Por favor completa todos los campos requeridos');
+        // Esto activará las validaciones HTML5
+        form.reportValidity();
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br>
+
+
+<!-- FOOTER -->
+<footer class="bg-indigo-900 text-white">
+  <div class="container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Menú -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">MENU</h3>
+        <ul class="space-y-2">
+          <li><a href="Inicio.html" class="hover:text-indigo-300 transition">Home</a></li>
+          <li><a href="#apoyoviajes" class="hover:text-indigo-300 transition">Travel support</a></li>
+          <li><a href="#paquetes" class="hover:text-indigo-300 transition">Packages</a></li>
+        </ul>
+      </div>
+      
+      <!-- Páginas -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">PÁGINAS</h3>
+        <ul class="space-y-2">
+          <li><a href="loginregistration.html" class="hover:text-indigo-300 transition">Log In</a></li>
+          <li><a href="aboutus.html" class="hover:text-indigo-300 transition">About Us</a></li>
+          <li><a href="actividades.html" class="hover:text-indigo-300 transition">Activities</a></li>
+          <li><a href="formulario.html" class="hover:text-indigo-300 transition">Booking</a></li>
+        </ul>
+      </div>
+      
+      <!-- Categorías -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">CATEGORIES</h3>
+        <ul class="space-y-2">
+          <li><a href="alojamiento.html" class="hover:text-indigo-300 transition">Accomodation</a></li>
+          <li><a href="restaurantes.html" class="hover:text-indigo-300 transition">Restaurants</a></li>
+          <li><a href="guias.html" class="hover:text-indigo-300 transition">Guides</a></li>
+          <li><a href="transporte.html" class="hover:text-indigo-300 transition">Transport</a></li>
+        </ul>
+      </div>
+      
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-lg font-bold mb-4 border-b border-indigo-700 pb-2">NEWSLETTER</h3>
+        <p class="mb-4 text-indigo-200">Subscribe to receive offers</p>
+        <div class="flex">
+          <input type="email" placeholder="Tu email" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-800">
+          <button class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r transition">Send</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Pie inferior -->
+    <div class="border-t border-indigo-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center mb-4 md:mb-0">
+        <img src="img/Wonderlust-removebg-preview.png" alt="Logo" class="h-12 w-12 mr-3">
+        <span class="text-xl font-bold">Wanderlust</span>
+      </div>
+      
+      <div class="text-indigo-300 text-sm mb-4 md:mb-0">
+        © 2025 Wanderlust - All rights reserved
+      </div>
+      
+      <div class="flex space-x-4">
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" class="h-8 w-8 rounded-full bg-indigo-800 flex items-center justify-center hover:bg-indigo-700 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Elementos del DOM
+    const buscador = document.getElementById('buscadorRestaurantes');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cardItems = document.querySelectorAll('.card-item');
+    const sections = document.querySelectorAll('section');
+
+    // Función para filtrar restaurantes
+    function filterRestaurants() {
+      const searchTerm = buscador.value.toLowerCase();
+      const activeCategory = document.querySelector('.filter-btn.bg-primary-600')?.dataset.category || 'all';
+
+      // Variables para controlar si una sección tiene resultados
+      const sectionHasResults = {
+        'typical': false,
+        'seafood': false,
+        'international': false
+      };
+
+      // Filtrar tarjetas
+      cardItems.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const location = card.querySelector('p').textContent.toLowerCase();
+        const cardCategory = card.dataset.category;
+        
+        // Comprobar si coincide con la búsqueda y la categoría
+        const matchesSearch = title.includes(searchTerm) || location.includes(searchTerm);
+        const matchesCategory = activeCategory === 'all' || cardCategory === activeCategory;
+        
+        if (matchesSearch && matchesCategory) {
+          card.style.display = 'block';
+          sectionHasResults[cardCategory] = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Mostrar/ocultar secciones según si tienen resultados
+      sections.forEach(section => {
+        const sectionTitle = section.querySelector('h2').textContent.toLowerCase();
+        let hasResults = false;
+        
+        if (sectionTitle.includes('typical') && (activeCategory === 'all' || activeCategory === 'typical')) {
+          hasResults = sectionHasResults['typical'];
+        } else if (sectionTitle.includes('seafood') && (activeCategory === 'all' || activeCategory === 'seafood')) {
+          hasResults = sectionHasResults['seafood'];
+        } else if (sectionTitle.includes('international') && (activeCategory === 'all' || activeCategory === 'international')) {
+          hasResults = sectionHasResults['international'];
+        }
+        
+        section.style.display = hasResults ? 'block' : 'none';
+      });
+    }
+
+    // Evento para el buscador
+    buscador.addEventListener('input', filterRestaurants);
+
+    // Eventos para los botones de filtro
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Cambiar estilos de los botones
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-primary-600', 'text-white');
+          btn.classList.add('bg-gray-200', 'text-gray-800');
+        });
+        
+        this.classList.remove('bg-gray-200', 'text-gray-800');
+        this.classList.add('bg-primary-600', 'text-white');
+        
+        // Aplicar filtros
+        filterRestaurants();
+      });
+    });
+
+    // Inicializar mostrando todos los restaurantes
+    filterRestaurants();
+  });
+</script>
+
+
+</body>
+</html>

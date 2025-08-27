@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Booking</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" href="img/Wonderlust-removebg-preview.png">
+
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center px-4 py-8">
+        <div class="w-full max-w-4xl">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <!-- Header -->
+                <div class="bg-gradient-to-r from-indigo-900 to-purple-300 py-6 px-8 text-white">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h1 class="text-3xl font-bold">Hotel Ituze</h1>
+                            <p class="text-blue-100">Luxury stays in the heart of the city</p>
+                        </div>
+                        <div class="text-4xl">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Booking Form -->
+                <form class="p-8 space-y-6">
+                    <h2 class="text-2xl font-bold text-gray-800 border-b pb-2">Book Your Room</h2>
+                    
+                    <!-- Guest Information -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-gray-700">Guest Information</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" required
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="guests" class="block text-sm font-medium text-gray-700 mb-1">Number of Guests</label>
+                                <select id="guests" name="guests" required
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="4+">More than 4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dates -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-gray-700">Stay Dates</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="checkIn" class="block text-sm font-medium text-gray-700 mb-1">Check-in Date</label>
+                                <input type="date" id="checkIn" name="checkIn" required
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="checkOut" class="block text-sm font-medium text-gray-700 mb-1">Check-out Date</label>
+                                <input type="date" id="checkOut" name="checkOut" required
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Room Selection -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-gray-700">Room Type</h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <!-- Standard Room -->
+                            <label class="border rounded-lg p-4 hover:border-blue-500 hover:bg-blue-50 cursor-pointer">
+                                <input type="radio" name="roomType" value="standard" class="hidden peer" checked>
+                                <div class="peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:ring-2 peer-checked:ring-blue-200 border rounded-lg p-3">
+                                    <div class="flex justify-between">
+                                        <h4 class="font-medium text-gray-800">Standard Room</h4>
+                                        <span class="text-blue-600 font-bold">$120/night</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">1 King Bed, 2 Guests</p>
+                                    <ul class="mt-2 text-sm text-gray-600 space-y-1">
+                                        <li class="flex items-center"><i class="fas fa-wifi mr-2 text-blue-500"></i> Free WiFi</li>
+                                        <li class="flex items-center"><i class="fas fa-tv mr-2 text-blue-500"></i> Flat-screen TV</li>
+                                        <li class="flex items-center"><i class="fas fa-coffee mr-2 text-blue-500"></i> Coffee maker</li>
+                                    </ul>
+                                </div>
+                            </label>
+                            
+                            <!-- Deluxe Room -->
+                            <label class="border rounded-lg p-4 hover:border-blue-500 hover:bg-blue-50 cursor-pointer">
+                                <input type="radio" name="roomType" value="deluxe" class="hidden peer">
+                                <div class="peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:ring-2 peer-checked:ring-blue-200 border rounded-lg p-3">
+                                    <div class="flex justify-between">
+                                        <h4 class="font-medium text-gray-800">Deluxe Room</h4>
+                                        <span class="text-blue-600 font-bold">$180/night</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">1 King Bed or 2 Queens, 4 Guests</p>
+                                    <ul class="mt-2 text-sm text-gray-600 space-y-1">
+                                        <li class="flex items-center"><i class="fas fa-wifi mr-2 text-blue-500"></i> Free WiFi</li>
+                                        <li class="flex items-center"><i class="fas fa-tv mr-2 text-blue-500"></i> Smart TV</li>
+                                        <li class="flex items-center"><i class="fas fa-bath mr-2 text-blue-500"></i> Premium toiletries</li>
+                                    </ul>
+                                </div>
+                            </label>
+                            
+                            <!-- Suite -->
+                            <label class="border rounded-lg p-4 hover:border-blue-500 hover:bg-blue-50 cursor-pointer">
+                                <input type="radio" name="roomType" value="suite" class="hidden peer">
+                                <div class="peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:ring-2 peer-checked:ring-blue-200 border rounded-lg p-3">
+                                    <div class="flex justify-between">
+                                        <h4 class="font-medium text-gray-800">Executive Suite</h4>
+                                        <span class="text-blue-600 font-bold">$280/night</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">Separate living area, 4 Guests</p>
+                                    <ul class="mt-2 text-sm text-gray-600 space-y-1">
+                                        <li class="flex items-center"><i class="fas fa-wifi mr-2 text-blue-500"></i> High-speed WiFi</li>
+                                        <li class="flex items-center"><i class="fas fa-utensils mr-2 text-blue-500"></i> Mini bar</li>
+                                        <li class="flex items-center"><i class="fas fa-spa mr-2 text-blue-500"></i> Bathrobes & slippers</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Special Requests -->
+                    <div class="space-y-2">
+                        <label for="requests" class="block text-sm font-medium text-gray-700 mb-1">Special Requests</label>
+                        <textarea id="requests" name="requests" rows="3"
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Any special requirements or preferences..."></textarea>
+                    </div>
+                    
+                    <!-- Payment and Submit -->
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <input id="agreeTerms" name="agreeTerms" type="checkbox" required
+                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="agreeTerms" class="ml-2 block text-sm text-gray-700">
+                                I agree to Hotel Ituze's <a href="#" class="text-blue-600 hover:underline">Terms & Conditions</a> and 
+                                <a href="#" class="text-blue-600 hover:underline">Cancellation Policy</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit"
+                            class="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg text-white font-bold text-lg shadow-md hover:shadow-lg transition duration-300">
+                            <i class="fas fa-calendar-check mr-2"></i> Confirm Booking
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Footer -->
+                <div class="bg-gray-50 px-8 py-4 border-t">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="text-sm text-gray-600 mb-2 md:mb-0">
+                            <i class="fas fa-phone-alt mr-1"></i> +250 788 123 456
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2 md:mb-0">
+                            <i class="fas fa-envelope mr-1"></i> reservations@ituzehotel.com
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-1"></i> KN 4 Ave, Kigali, Rwanda
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
